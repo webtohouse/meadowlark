@@ -3,6 +3,7 @@ var express = require('express');
 var app = express();
 
 // 핸들바 뷰 엔진 설정
+<<<<<<< HEAD
 var handlebars = require('express-handlebars')
 	.create({ defaultLayout: 'main'});
 app.engine('handlebars', handlebars.engine);
@@ -12,6 +13,12 @@ app.set('view engine', 'handlebars');
 // 클라이언트에 전송할 정적파일(이미지,CSS,클라이언트 자바스크립트 등...)
 app.use(express.static(__dirname + '/public'));
 
+=======
+var handlebars = requrie('express-handlebars').create({ defaultLayout: 'main'});
+app.engine('handlebars', handlebars.engine);
+app.set('view engine', 'handlebars');
+
+>>>>>>> 8e8c1234cf8a79b7cfa19bd9953108c6ef4786c3
 app.set('port', process.env.PORT || 3000);
 
 
