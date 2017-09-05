@@ -1,0 +1,25 @@
+{
+  "name": "meadowlark",
+  "version": "1.0.0",
+  "description": "Web Development with Node & Express",
+  "main": "meadowlark.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webtohouse/meadowlark.git"
+  },
+  "keywords": [
+    "Node"
+  ],
+  "author": "webto",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/webtohouse/meadowlark/issues"
+  },
+  "homepage": "https://github.com/webtohouse/meadowlark#readme",
+  "dependencies": {
+    "express": "^4.15.4"
+  }
+}
