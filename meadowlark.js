@@ -1,6 +1,11 @@
 var express = require('express');
 var app = express();
 
+// 핸들바 뷰 엔진 설정
+var handlebars = requrie('express-handlebars').create({ defaultLayout: 'main'});
+app.engine('handlebars', handlebars.engine);
+app.set('view engine', 'handlebars');
+
 app.set('port', process.env.PORT || 3000);
 
 // Add Route
