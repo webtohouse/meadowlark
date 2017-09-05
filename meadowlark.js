@@ -6,32 +6,40 @@ var handlebars = requrie('express-handlebars').create({ defaultLayout: 'main'});
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
 
+// static 미들웨어
+// 클라이언트에 전송할 정적파일(이미지,CSS,클라이언트 자바스크립트 등...)
+app.use(express.static(__dirname + '/public'));
+
 app.set('port', process.env.PORT || 3000);
 
 // Add Route
 app.get('/', function(req, res){
-		res.type('text/plain');
-		res.send('Meadowlark Travel');
+		// res.type('text/plain');
+		// res.send('Meadowlark Travel');
+		res.render('home');
 });
 
 app.get('/about', function(req, res){
-		res.type('text/plain');
-		res.send('About Meadowlark Travel');
+		// res.type('text/plain');
+		// res.send('About Meadowlark Travel');
+		res.render('about');
 });
 
 // 커스텀 404 페이지
-app.use(function(req, res){
-	res.type('text/plain');
+app.use(function(req, res, next){
+	// res.type('text/plain');
 	res.status(404);
-	res.send('404 - Not Found');
+	// res.send('404 - Not Found');
+	res.render('404');
 });
 
 // 커스텀 500 페이지
-app.use(function(req, res){
+app.use(function(req, res, next){
 	console.error(err.stack);
-	res.type('text/plain');
+	// res.type('text/plain');
 	res.status(500);
-	res.send('500 - Server Error');
+	// res.send('500 - Server Error');
+	res.render('500');
 });
 
 app.listen(app.get('port'), function(){
